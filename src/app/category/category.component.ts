@@ -8,19 +8,24 @@ import { CategoryService } from '../core/services/category.service';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  categories: any = [];
+  constructor(private categoryService : CategoryService) { }
 
   ngOnInit(): void {
 
-    //this.getAllCategories();
+    this.getAllCategories();
   }
 
-  // getAllCategories(){
-  //   this.categoryService.getCategories().subscribe((response : any) => {
-  //     console.log(response);
-  //   },
-  //   (error: any) => {
-  //     console.log(error);
-  //   })
-  // }
+  getAllCategories(){
+    this.categoryService.getCategories().subscribe((response : any) => {
+      if(response.status == 200){
+        this.categories =  response.body;
+        console.log(response);
+        console.log(response?.body);
+      }
+    },
+    (error: any) => {
+      console.log(error);
+    })
+  }
 }

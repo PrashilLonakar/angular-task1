@@ -1,1 +1,26 @@
-<p>list works!</p>
+<div class="products">
+    <div class="row">
+        <div class="col-3" *ngFor="let product of productsByCategory ;let i = index">
+            <div class="card" style="width: 18rem;">
+                <img [src]="product?.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 [routerLink]="['/categories/product/detail', product?.id]" class="card-title text-primary">{{product?.title.substring(0,21)}}<span *ngIf="product?.title.length > 20">...</span></h5>
+                  <p class="card-text">{{product?.description.substring(0,21)}}<span *ngIf="product?.title.length > 20">...</span></p>
+                  <div class="row">
+                      <div class="col-12">
+                          <span>Price : <span class="text-success">{{product?.price}}</span></span>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                        <span>Rate : <span class="text-danger">{{product?.rating?.rate}}</span></span>
+                    </div>
+                    <div class="col-6">
+                        <span>Count : <span class="text-warning">{{product?.rating?.count}}</span></span>
+                    </div>
+                </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

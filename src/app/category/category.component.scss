@@ -1,0 +1,12 @@
+.categories-all{
+    // display: flex;
+    // justify-content: center;
+    height: 100%;
+    margin-top: 20px;
+    .row{
+        .col{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

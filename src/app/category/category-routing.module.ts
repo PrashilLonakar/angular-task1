@@ -14,11 +14,11 @@ const routes: Routes = [
   component: CategoryComponent
   },
   {
-  path: "product/list",
+  path: "products/:id",
   component: fromProduct.components[0]
   },
   {
-  path: "product/detail",
+  path: "product/detail/:id",
   component: fromProduct.components[1]
   }
 ];
