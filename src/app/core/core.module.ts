@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CoreRoutingModule } from './core-routing.module';
-import { BlankPageComponent } from './layout/blank-page/blank-page.component';
-import { FullPageComponent } from './layout/full-page/full-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
-
+import * as fromLayout from './layout';
 
 @NgModule({
-  declarations: [BlankPageComponent, FullPageComponent, ErrorPageComponent],
+  declarations: [
+    ErrorPageComponent,
+    ...fromLayout.components
+  ],
   imports: [
     CommonModule,
     CoreRoutingModule
