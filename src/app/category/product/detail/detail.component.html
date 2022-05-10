@@ -1,1 +1,26 @@
-<p>detail works!</p>
+<div class="product">
+    <div class="row">
+        <div class="col">
+            <img [src]="product?.image" class="card-img-top" alt="...">
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <h3 class="card-title text-primary">{{product?.title.substring(0,61)}}<span *ngIf="product?.title.length > 60">...</span></h3>
+                <p class="card-text">{{product?.description.substring(0,91)}}<span *ngIf="product?.title.length > 90">...</span></p>
+                <div class="row">
+                    <div class="col-12">
+                        <span>Price : <span class="text-success">{{product?.price}}</span></span>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                      <span>Rate : <span class="text-danger">{{product?.rating?.rate}}</span></span>
+                  </div>
+                  <div class="col-6">
+                      <span>Count : <span class="text-warning">{{product?.rating?.count}}</span></span>
+                  </div>
+              </div>
+              </div>
+        </div>
+    </div>
+</div>

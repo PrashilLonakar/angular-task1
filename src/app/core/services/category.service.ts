@@ -18,4 +18,9 @@ export class CategoryService {
     let url = '/products/category/' + requestUrl;
     return this.http.get(url);
   }
+
+  getProduct(id : number){
+    let url = '/products/' + id;
+    return this.http.get(url);
+  }
 }

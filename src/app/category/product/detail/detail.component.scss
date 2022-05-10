@@ -1,0 +1,40 @@
+.product{
+    // display: flex;
+    // justify-content: center;
+    height: 100%;
+    margin-top: 20px;
+    img{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        border-radius: 10px;
+        border: 1px solid grey;
+        width: 80%;
+        float: right;
+        height: 80%;
+    
+    }
+    .row{
+        display: flex;
+        justify-content: center;
+        .col{
+            padding: 25px;
+                .card-title {
+                    cursor: pointer;
+                    margin-bottom: 2.2rem;
+                }
+                .card-text {
+                    cursor: pointer;
+                    margin-bottom: 1.5rem;
+                }
+
+                .card-body{
+                    padding:  0rem 1rem 1rem 1rem;
+                    .row{
+                        padding: 7px 0px 7px 0px;
+                    }
+                }
+                span{
+                    font-weight: 700;
+                }
+        }
+    }
+}
