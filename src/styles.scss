@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+.page-wrapper{
+    height: 100vh;
+    background-color: #e9ecef;
+    overflow: hidden;
+    .page-content{
+        display: inline-block;
+        width: 100%;
+    }
+}

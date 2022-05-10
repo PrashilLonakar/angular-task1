@@ -8,10 +8,11 @@ import { DetailComponent } from './product/detail/detail.component';
 
 
 @NgModule({
-  declarations: [CategoryComponent, ListComponent, DetailComponent],
+  declarations: [ListComponent, DetailComponent, CategoryComponent],
   imports: [
     CommonModule,
     CategoryRoutingModule
-  ]
+  ],
+  exports: [CategoryComponent]
 })
 export class CategoryModule { }
