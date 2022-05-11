@@ -23,4 +23,19 @@ export class CategoryService {
     let url = '/products/' + id;
     return this.http.get(url);
   }
+
+  addProduct(data : any){
+    return this.http.post('/products',data);
+  }
+
+  editProduct(id: number,data : any){
+    let url = '/products/' + id;
+    return this.http.post(url,data);
+  }
+
+  deleteProduct(id: number){
+    let url = '/products/' + id;
+    return this.http.delete(url);
+  }
+
 }

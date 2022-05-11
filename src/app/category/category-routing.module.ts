@@ -20,6 +20,20 @@ const routes: Routes = [
   {
   path: "product/detail/:id",
   component: fromProduct.components[1]
+  },
+  {
+  path: "product/add/:category",
+  component: fromProduct.components[2],
+  data: {
+    type: 'add'
+  }
+  },
+  {
+  path: "product/edit/:category/:id",
+  component: fromProduct.components[2],
+  data: {
+    type: 'edit'
+  }
   }
 ];
 

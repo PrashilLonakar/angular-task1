@@ -1,0 +1,122 @@
+<div class="product-form">
+    <form [formGroup]="productForm" (ngSubmit)="submitForm()">
+        <div class="row mb-5 mb3">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 mt-1">
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="code" class="control-label">Title<span class="text-danger">*</span></label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="title"
+                              id="title"
+                              placeholder="Enter the Title"
+                              [class.is-invalid]="
+                                productForm.get('title').invalid &&
+                                productForm.get('title').touched
+                              "
+                            />
+                            <small
+                              *ngIf="
+                                isSubmitted && productForm.get('title').errors?.required
+                              "
+                              class="text-danger"
+                              >Please enter title</small
+                            >
+                          </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <div class="">
+                                <label for="floatingTextarea2">Description</label>
+                                <textarea class="form-control" formControlName="description" placeholder="Leave a description here" id="floatingTextarea2" style="height: 100px"></textarea>     
+                              </div>
+                            <!-- <small
+                              *ngIf="
+                                isSubmitted && productForm.get('description').errors?.required
+                              "
+                              class="text-danger"
+                              >Please enter title</small
+                            > -->
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-md-12  mb-2">
+                                <div class="form-group">
+                                    <label for="code" class="control-label">Price<span class="text-danger">*</span></label>
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      formControlName="price"
+                                      id="price"
+                                      placeholder="$"
+                                      [class.is-invalid]="
+                                        productForm.get('price').invalid &&
+                                        productForm.get('price').touched
+                                      "
+                                    />
+                                    <small
+                                      *ngIf="
+                                        isSubmitted && productForm.get('price').errors?.required
+                                      "
+                                      class="text-danger"
+                                      >Please enter Price</small
+                                    >
+                                  </div>
+                            </div>
+                            <div class="col-md-12  mb-2">
+                                <div class="form-group">
+                                    <div class="">
+                                        <label for="image" class="control-label">Image Url<span class="text-danger">*</span></label>
+                                        <input
+                                          type="text"
+                                          class="form-control"
+                                          formControlName="image"
+                                          id="image"
+                                          placeholder="paste your Image Url here..."
+                                        />
+                                      </div>
+                                  </div>
+                            </div>
+                            <div class="col-md-12  mb-2">
+                                <div class="form-group">
+                                    <label for="code" class="control-label">Category<span class="text-danger">*</span></label>
+                                    <select placeholder="Select your Category" formControlName="category" class="form-select" aria-label="Default select example">
+                                        <option *ngFor="let category of categories; let i = index" [value]="category">{{category}}</option>
+                                      </select>
+                                  </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="col-6">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                </div>
+        </div>
+  
+        <div class="row" style="float: right; ">
+            <div class="col-md-12" style="display: flex;">
+                <button [disabled]="loading" class="btn btn-outline-primary btn-submit" type="submit">
+                  <div *ngIf="loading" class="loader"></div>
+                  <span> {{button}}</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  style="margin-left:20px"
+                  (click)="backClicked()"
+                >
+                  <span>Cancel</span>
+                </button>
+              </div>
+        </div>
+      </form>
+</div>

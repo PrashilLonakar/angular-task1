@@ -10,6 +10,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class ListComponent implements OnInit {
 
   productsByCategory: any = [];
+  productId: string = '';
   constructor(
     private categoryService : CategoryService,
     private router : Router,
@@ -17,13 +18,12 @@ export class ListComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    let productId: string = '';
     this.route.params.subscribe( params =>
-      productId = params['id']
+      this.productId = params['id']
     );
-    console.log('productId',productId);
+    console.log('productId',this.productId);
     // setTimeout(() => {
-      this.getProductByCategory(productId)
+      this.getProductByCategory(this.productId)
     // },5000);
   }
 
@@ -31,6 +31,18 @@ export class ListComponent implements OnInit {
     this.categoryService.getProductByCategory(requestUrl).subscribe((response : any) => {
       if(response.status == 200){
         this.productsByCategory =  response.body;
+      }
+    },
+    (error: any) => {
+      console.log(error);
+    })
+  }
+
+  deleteProduct(id : number){
+    this.categoryService.deleteProduct(id).subscribe((response : any) => {
+      if(response.status == 200){
+        console.log(response); 
+        this.getProductByCategory(this.productId) 
       }
     },
     (error: any) => {

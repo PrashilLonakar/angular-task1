@@ -1,7 +1,14 @@
 <div class="products">
     <div class="row">
+        <div class="col-12">
+            <div class="add-product">
+                <button [routerLink]="['/categories/product/add', productId]" type="button" class="btn btn-primary">Add Products</button>
+            </div>
+        </div>
         <div class="col-3" *ngFor="let product of productsByCategory ;let i = index">
             <div class="card" style="width: 18rem;">
+                <span [routerLink]="['/categories/product/edit', productId, product?.id]" class="card-edit"><i class="fas fa-edit"></i></span>
+                <span (click)="deleteProduct(product?.id)" class="card-delete"><i class="fas fa-trash"></i></span>
                 <img [src]="product?.image" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 [routerLink]="['/categories/product/detail', product?.id]" class="card-title text-primary">{{product?.title.substring(0,21)}}<span *ngIf="product?.title.length > 20">...</span></h5>

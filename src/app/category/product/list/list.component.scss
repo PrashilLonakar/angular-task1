@@ -3,6 +3,39 @@
     // justify-content: center;
     height: 100%;
     margin-top: 20px;
+    .card-edit{
+        i{
+            color: grey;
+            font-size: 20px;
+            font-weight: 700;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            cursor: pointer;
+        }
+        i:hover{
+            color: #198754;
+        }
+    }
+
+    .card-delete{
+        i{
+            color: grey;
+            font-size: 20px;
+            font-weight: 700;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            cursor: pointer;
+        }
+        i:hover{
+            color: #dc3545;
+        }
+    }
+    .add-product{
+        float: right;
+        padding: 0px 38px 0px 38px;
+    }
     .row{
         .col-3{
             display: flex;

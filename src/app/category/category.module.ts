@@ -5,13 +5,16 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
 import { ListComponent } from './product/list/list.component';
 import { DetailComponent } from './product/detail/detail.component';
-
+import { FormComponent } from './product/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ListComponent, DetailComponent, CategoryComponent],
+  declarations: [ListComponent, DetailComponent, CategoryComponent, FormComponent],
   imports: [
     CommonModule,
-    CategoryRoutingModule
+    CategoryRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [CategoryComponent]
 })
